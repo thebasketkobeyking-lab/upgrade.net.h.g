@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>upgrade.net.h.g</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0f0f0f, #141e30);
+            color: white;
+            text-align: center;
+        }
+
+        header {
+            background: black;
+            padding: 20px;
+            font-size: 26px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        nav {
+            background: #111;
+            padding: 10px;
+        }
+
+        nav button {
+            background: #00ffcc;
+            border: none;
+            padding: 10px 18px;
+            margin: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        nav button:hover {
+            background: #00ccaa;
+        }
+
+        .section {
+            display: none;
+            padding: 30px;
+        }
+
+        .active {
+            display: block;
+        }
+
+        .game-card {
+            background: #222;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 320px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px #00ffcc33;
+        }
+
+        .play-btn {
+            background: #00ffcc;
+            border: none;
+            padding: 8px 15px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        #clickBtn {
+            padding: 15px 30px;
+            font-size: 18px;
+            background: #ff0077;
+            border: none;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            background: black;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    UPGRADE.NET.H.G
+</header>
+
+<nav>
+    <button onclick="showSection('home')">Home</button>
+    <button onclick="showSection('games')">Games</button>
+</nav>
+
+<div id="home" class="section active">
+    <h1>Welcome to Upgrade!</h1>
+    <p>Play games. Earn upgrades. Become stronger.</p>
+</div>
+
+<div id="games" class="section">
+    <h1>🎮 Click Speed Game</h1>
+    <p>Score: <span id="score">0</span></p>
+    <button id="clickBtn" onclick="addScore()">CLICK ME</button>
+</div>
+
+<footer>
+    © 2026 upgrade.net.h.g
+</footer>
+
+<script>
+let score = 0;
+
+function showSection(sectionId) {
+    document.querySelectorAll('.section').forEach(section => {
+        section.classList.remove('active');
+    });
+    document.getElementById(sectionId).classList.add('active');
+}
+
+function addScore() {
+    score++;
+    document.getElementById("score").innerText = score;
+}
+</script>
+
+</body>
+</html>
